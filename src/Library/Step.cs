@@ -4,6 +4,8 @@
 // </copyright>
 //-------------------------------------------------------------------------------
 
+//Aplica expert porque se mantiene el encapsulamiento y cumple el patron rsp porque solo hay una causa para poder modificarla
+
 namespace Full_GRASP_And_SOLID.Library
 {
     public class Step
@@ -23,5 +25,15 @@ namespace Full_GRASP_And_SOLID.Library
         public int Time { get; set; }
 
         public Equipment Equipment { get; set; }
+    
+    
+        public double getStepCost(){
+
+           return(this.Input.UnitCost * this.Quantity) + (this.Equipment.HourlyCost * this.Time);
+
+        }
+
     }
+
+
 }
